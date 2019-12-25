@@ -6,8 +6,8 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 /**
- * @author 杜家浩
- * @version 2.1.1
+ * @author Jeeno
+ * @version 1.0.0
  * @date 2019/12/20 15:56
  */
 @Configuration
