@@ -19,3 +19,8 @@ several paths below:
   
 4. get resource
   http://[resource-url]?access_token=【access_token】
+
+This demo provides three different ways to login.
+1. oauth2 authorize server
+2. username & password mode(Normal)
+3. backgate mode(just request for GET url-http://localhost:9000/auth/back/gate?username=admin)
