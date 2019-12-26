@@ -1,4 +1,4 @@
-package com.jeeno.oauth2authorize.login;
+package com.jeeno.oauth2authorize.exception;
 
 import org.springframework.security.core.AuthenticationException;
 

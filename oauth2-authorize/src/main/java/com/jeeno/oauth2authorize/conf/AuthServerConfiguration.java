@@ -69,9 +69,9 @@ public class AuthServerConfiguration extends AuthorizationServerConfigurerAdapte
 
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) {
-        //认证体系使用security的方式
+        // 认证体系使用security的方式
         endpoints.authenticationManager(authenticationManager);
-        //允许调用方式
+        // 允许调用方式
         endpoints.allowedTokenEndpointRequestMethods(HttpMethod.GET, HttpMethod.POST);
         // 使用refresh_token刷新令牌，必须要
         endpoints.userDetailsService(userDetailsService);
@@ -86,6 +86,8 @@ public class AuthServerConfiguration extends AuthorizationServerConfigurerAdapte
         // 刷新令牌周期（秒）
         tokenServices.setRefreshTokenValiditySeconds(60);
         endpoints.tokenServices(tokenServices);
+        // 自定义的授权页面
+        endpoints.pathMapping("/oauth/confirm_access","/custom/confirm_access");
     }
 
     @Bean

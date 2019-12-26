@@ -1,6 +1,6 @@
 package com.jeeno.oauth2authorize.login.provider;
 
-import com.jeeno.oauth2authorize.login.NormalAuthenticationException;
+import com.jeeno.oauth2authorize.exception.NormalAuthenticationException;
 import com.jeeno.oauth2authorize.login.token.NormalLoginAuthenticationToken;
 import com.jeeno.oauth2authorize.pojo.UserDO;
 import lombok.extern.slf4j.Slf4j;

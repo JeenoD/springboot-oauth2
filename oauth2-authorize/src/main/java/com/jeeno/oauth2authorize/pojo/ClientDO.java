@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.oauth2.provider.ClientDetails;
@@ -42,6 +43,15 @@ public class ClientDO implements ClientDetails {
      * 回调url 的分隔符
      */
     public static final String SEPARATOR = ",";
+    /**
+     * 令牌有效时长
+     */
+    public static final Integer ACCESS_TOKEN_VALIDITY_SECONDS = 120;
+    /**
+     * 令牌刷新周期
+     */
+    public static final Integer REFRESH_TOKEN_VALIDITY_SECONDS = 60;
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -114,17 +124,22 @@ public class ClientDO implements ClientDetails {
 
     @Override
     public Integer getAccessTokenValiditySeconds() {
-        return 300;
+        return ACCESS_TOKEN_VALIDITY_SECONDS;
     }
 
     @Override
     public Integer getRefreshTokenValiditySeconds() {
-        return 60;
+        return REFRESH_TOKEN_VALIDITY_SECONDS;
     }
 
+    /**
+     * 是否自动授权
+     * @param scope 作用域
+     * @return boolean
+     */
     @Override
     public boolean isAutoApprove(String scope) {
-        return true;
+        return false;
     }
 
     @Override
